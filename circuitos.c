@@ -3,7 +3,7 @@
 #include <locale.h>
 
 
-void switchDivisorTensao(){ //@Léo Angelo Zambone Neto
+void switchDivisorTensao(){
 
     double Vs, Vm, Im, R1, R2;
 
@@ -35,6 +35,11 @@ void switchDivisorTensao(){ //@Léo Angelo Zambone Neto
     if (Im <= 0) {
         printf("\nErro: A corrente máxima no circuito deve ser maior que zero.\n");
         return;
+    }
+
+    if (Ic == 0) {
+    printf("A corrente IC nao pode ser zero. Operacao interrompida.\n");
+    return;
     }
 
     R2 = Vm / Im;
